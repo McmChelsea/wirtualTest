@@ -1,0 +1,16 @@
+<div>
+    <div style="margin:10px">
+        <mat-card *ngIf="usersList; else loading">
+            <h2>Click any user from the list</h2>
+            <ul class="items">
+                <li *ngFor="let user of usersList" (click)="showUserInfo(user)" style="cursor:pointer">
+                    <span class="badge">{{user.username}}</span>{{user.first_name}} {{user.last_name}} , {{user.email}} 
+                </li>
+            </ul>
+        </mat-card>
+        <ng-template #loading>
+            Loading...
+        </ng-template>
+    </div>
+   
+</div>
